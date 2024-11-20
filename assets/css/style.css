@@ -47,7 +47,7 @@ html{
     position: relative;
 }
 
-#header .nav  .btn-list,
+#header .nav .btn-list,
 .btn-list {
     color: #fff;
     padding: 0.6rem;
@@ -62,10 +62,18 @@ html{
     border-radius: .8rem;
 }
 
+.list-icon {
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+}
+
 .nav-btn .nav-btn-reload,
 .modal-btn-reload {
     padding-left: 2.4rem;
     border: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-btn-reload button,
@@ -77,18 +85,14 @@ html{
 
 .nav-btn .logo-btn,
 .logo-icon {
-    display: flex;
     color: #fff;
-    height: 4rem;
-    width: 4rem;
-    align-items: center;
-    justify-content: center;
+    height: 3rem;
+    width: 3rem;
     font-weight: 1200;
-    font-size: 2.5rem;
 }
 
 .nav-btn .logo-btn:hover{
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .nav-btn_search {
@@ -98,11 +102,11 @@ html{
 }
 
 .search-box {
-    height: 40px;
+    height: 4rem;
     width: 462px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 1rem;
 }
 
 .search-box_input {
@@ -117,19 +121,22 @@ html{
 
 .search-box .search-box_btn {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
+    margin-top: 0.8rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
     background-color: #2e3856;
     color: #d9dde8;
 }
 
+.btn-search {
+    fill: #939bb4;
+}
+
 .btn-right {
     display: flex;
-    padding-left: 24px;
-    align-items: center;
+    padding-left: 2.4rem;
+    /* align-items: center; */
 }
 
 .btn-right .btn-right_choice {
@@ -141,8 +148,8 @@ html{
     background-color: #4255ff;
     color: #fff;
     border-radius: 7px;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     border: none;
     display: flex;
     align-items: center;
@@ -165,7 +172,9 @@ html{
 .btn-right_note span {
     color: #282e3e;
     font-weight: 600;
-}
+}   
+
+
 
 /* NỘI DUNG */
 
@@ -206,6 +215,7 @@ input#rate-5:checked ~ label{
 #container .option {
     margin-top: 4.5rem;
     /* position: absolute; */
+    
 }
 
 .option .option-list {
@@ -214,37 +224,45 @@ input#rate-5:checked ~ label{
     list-style-type: none;
 }
 
-.option-list .btn-memo,
+.option-list .btn-card,
 .option-list .btn-study,
 .option-list .btn-exam,
 .option-list .btn-aply {
     padding: 4.8rem 0.8rem;
+    border-bottom: .4rem solid #0000;
     height: 3.5rem;
     width: 12.8rem;
-    background-color: #2e3856;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #2e3856;
     border-radius: 0.8rem;
-    border: none;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;  
+    justify-content: center;
 }
 
-.btn-memo:hover,
+.btn-card-icon,
+.btn-study-icon,
+.btn-exam-icon,
+.btn-aply-icon {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.text-card {
+    margin-top: 0.5rem;
+}
+
+.btn-card:hover,
 .btn-study:hover,
 .btn-exam:hover,
 .btn-aply:hover {
     box-shadow: 0 .25rem 1rem 0 #282e3e1f;
-    border-bottom: 4px solid #a8b1ff;
+    border-bottom-color: #a8b1ff;
     cursor: pointer;
 }
 
-.btn-memo-icon,
-.btn-sutdy-icon,
-.btn-exam-icon,
-.btn-aply-icon {
-    font-size: 2rem;
-}
 
 /* TIỆN ÍCH THÊM */
 
@@ -418,11 +436,11 @@ button:hover {
 
 .navigation {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    /* justify-content: space-between; */
+    justify-content: center;
+    gap: 0.5rem;
     margin-top: 20px;
     grid-column: 2;
-    margin-left: 5rem;
 }
 
 .navigation > button {
@@ -432,7 +450,7 @@ button:hover {
     background-color: #0A092D;
     color: #fff;
     border: 1px solid #586380;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .navigation > button:hover {
@@ -457,4 +475,11 @@ button:hover {
 
 #answer-text {
     font-size: 3rem;
+}
+
+
+#btn-left, #btn-right {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
 }
