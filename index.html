@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizlet</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div class="nav">
+        <div class="nav-btn">
+          <div class="nav-btn-list">
+            <button class="btn-list js-btn_list">
+              <i class="list-icon ti-list"></i>
+            </button>
+          </div>
+          <div class="nav-btn-reload">
+            <button type="button" onclick="tai_lai_trang()">
+              <i class="logo-btn ti-reload"></i>
+            </button>
+          </div>
+        </div>
+        <div class="nav-btn_search">
+          <div class="search-box">
+            <button class="search-box_btn">
+              <i class="ti-search"></i>
+            </button>
+            <input class="search-box_input" placeholder="Tìm kiếm bài kiểm tra thử" type="text">
+          </div>
+        </div>
+        <div class="btn-right"> 
+          <div class="btn-right_choice">
+            <button class="btn-right_plus">
+              <i class="ti-plus"></i>
+            </button>
+          </div>
+          <div class="btn-right_note">
+            <a role="button" href="https://quizlet.com/upgrade?source=header_plus&redir=https%3A%2F%2Fquizlet.com%2Flatest" >
+              <span>Nâng cấp: dùng thử miễn phí 7 ngày</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <h1>TƯ TƯỞNG HỒ CHÍ MINH - CHƯƠNG III</h1>
+      <!-- đánhh giá -->
+      <div class="star-rating">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+      </div>
+      <!-- các tùy chọn học -->
+      <div class="option">
+        <ul class="option-list">
+          <li>
+            <button class="btn-memo">
+              <i class="btn-memo-icon ti-comments"><br>Thẻ ghi nhớ</i>
+          </button>
+          </li>
+          <li>
+            <button class="btn-study">
+              <i class="btn-sutdy-icon ti-write"><br>Học</i>
+            </button>
+          </li>
+          <li>
+            <button class="btn-exam">
+              <i class="btn-exam-icon ti-files"><br>Kiểm tra</i>
+            </button>
+          </li>
+          <li>
+            <button class="btn-aply">
+              <i class="btn-aply-icon ti-layers-alt"><br>Ghép thẻ</i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <aside>
+      <ul class="related">
+        <li>
+          <div class="home-item">
+            <button type="button" onclick="tai_lai_trang()">
+              <i class="home-btn ti-home"></i>
+            </button>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <ti class="folder-btn ti-folder"></ti>
+          </a>
+        </li>
+        <li>
+          <!-- <div class="bell-item"> -->
+            <button class="bell-btn">
+              <i class="bell-item ti-bell"></i>
+            </button>
+          <!-- </div> -->
+        </li>
+      </ul>
+
+      <!-- Modal của aside -->
+      <div class="modal">
+        <div class="modal-container js-modal-container">
+          <div class="modal-btn">
+            <div class="modal-btn-list">
+              <button class="btn-list js-btn-close">
+                <i class="list-icon ti-list"></i>
+              </button>
+            </div>
+            <div class="modal-btn-reload">
+              <button class="btn-reload">
+                <i class="logo-icon ti-reload"></i>
+              </button>
+            </div>
+          </div>
+          <ul class="modal-related">
+            <li>
+              <div class="modal-home-item">
+                <button class="modal-icon" type="button" onclick="tai_lai_trang()">
+                  <i class="modal-home-btn ti-home">
+                    <span>Trang chủ</span>
+                  </i>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="modal-folder-item">
+                <button class="modal-icon">
+                  <i class="modal-folder-btn ti-folder">
+                    <span>Thư viện của bạn</span>
+                  </i>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="modal-bell-item">
+                <button class="modal-icon">
+                  <i class="modal-bell-btn ti-bell">
+                    <span>Thông báo</span>
+                  </i>
+                </button>
+              </div>
+            </li>
+          </ul>
+          <hr>
+        </div>
+      </div>
+
+    </aside>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-inner">
+          <!-- Mặt trước (câu hỏi) -->
+          <div class="card-front">
+            <div class="question">
+              <p id="question-text"></p>
+              <form id="quiz-form">
+                <!-- Cac lua chon se duoc hien thi boi JS -->
+              </form>
+            </div>
+          </div>
+          <!-- Mặt sau (đáp án) -->
+          <div class="card-back">
+            <p id="answer-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button id="btn-left">
+          <i class="ti-arrow-left icon-btn-left"></i>
+        </button>
+        <button id="btn-flip">Lật</button>
+        <button id="btn-right">
+          <i class="ti-arrow-right icon-btn-right"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+<script>
+  function tai_lai_trang(){
+      location.reload();
+  }
+</script>
+
+<script>
+  const listBtn = document.querySelector('.js-btn_list')
+  const modal = document.querySelector('.modal') //luu class modal vao bien modal
+  const ClosetBtn = document.querySelector('.js-btn-close')
+  function showList() {
+    modal.classList.add('open')
+  }
+
+  function hideList() {
+    modal.classList.remove('open')
+  }
+
+  listBtn.addEventListener('click', showList)
+  ClosetBtn.addEventListener('click', hideList)
+
+  // listBtn.addEventListener('click', function() {
+  //   if (modal.classList.contains('open')) {
+  //     modal.classList.remove('open')
+  //   } else {
+  //     showList()
+  //   }
+  // })
+
+</script>
+
+</html>
