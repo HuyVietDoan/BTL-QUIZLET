@@ -20,7 +20,6 @@ function Container() {
           </React.Fragment>
         ))}
       </div>
-
       {/* Các tùy chọn học */}
       <div className="option">
         <ul className="option-list">

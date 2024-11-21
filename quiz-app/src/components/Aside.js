@@ -27,7 +27,6 @@ function Aside() {
         </li>
       </ul>
     </aside>
-    
   );
 }
 

@@ -17,6 +17,7 @@ function Header() {
               </svg>
             </button>
           </div>
+          
           <div className="nav-btn-reload">
             <button type="button" onClick={reloadPage}>
               <svg className = "logo-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
