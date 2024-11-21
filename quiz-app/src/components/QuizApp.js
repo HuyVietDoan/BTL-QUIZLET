@@ -1,87 +1,88 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const questions = [
+const Quiz = () => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const questions = [
     {
-        question: "Chọn phát biểu không đúng:",
-        options: [
-            "Cách mạng khoa học và công nghệ thúc đẩy xu thế toàn cầu hóa",
-            "Cách mạng khoa học và công nghệ làm xuất hiện các vấn đề toàn cầu",
-            "Cách mạng khoa học và công nghệ là xu thế tất yếu của toàn cầu hóa",
-            "Cách mạng khoa học và công nghệ thúc đẩy sự phát triển của thế giới"
-        ],
-        answer: "C"
+      question: "Chọn phát biểu không đúng:",
+      options: [
+        "Cách mạng khoa học và công nghệ thúc đẩy xu thế toàn cầu hóa",
+        "Cách mạng khoa học và công nghệ làm xuất hiện các vấn đề toàn cầu",
+        "Cách mạng khoa học và công nghệ là xu thế tất yếu của toàn cầu hóa",
+        "Cách mạng khoa học và công nghệ thúc đẩy sự phát triển của thế giới",
+      ],
+      answer: "C",
     },
-    {
-        question: "Hồ Chí Minh nói về loại hình hợp tác xã khi nào?",
-        options: ["1920", "1927", "1945", "1954"],
-        answer: "B"
-    },
-    // Thêm các câu hỏi khác...
-];
+    // Thêm các câu hỏi khác vào đây
+  ];
 
-const QuizApp = () => {
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [isFlipped, setIsFlipped] = useState(false);
+  const currentQuestion = questions[currentQuestionIndex];
 
-    const handleFlip = () => {
-        setIsFlipped(!isFlipped);
-    };
+  const handlePrevious = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setIsFlipped(false);
+    }
+  };
 
-    const handleNext = () => {
-        if (currentQuestionIndex < questions.length - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
-            setIsFlipped(false);
-        }
-    };
+  const handleNext = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setIsFlipped(false);
+    }
+  };
 
-    const handlePrev = () => {
-        if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
-            setIsFlipped(false);
-        }
-    };
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
 
-    const currentQuestion = questions[currentQuestionIndex];
-
-    return (
-        <div className="quiz-container">
-            <div className={`card ${isFlipped ? "flipped" : ""}`}>
-                {/* Front Side */}
-                <div className="card-front">
-                    <h2>Câu hỏi {currentQuestionIndex + 1}</h2>
-                    <p id="question-text">{currentQuestion.question}</p>
-                    <form id="quiz-form">
-                        {currentQuestion.options.map((option, index) => (
-                            <label key={index}>
-                                <input type="radio" name="answer" />
-                                {option}
-                                <br />
-                            </label>
-                        ))}
-                    </form>
-                </div>
-
-                {/* Back Side */}
-                <div className="card-back">
-                    <h2>Đáp án</h2>
-                    <p id="answer-text">{`Đáp án: ${currentQuestion.answer}`}</p>
-                </div>
-            </div>
-
-            {/* Buttons */}
-            <div className="buttons">
-                <button id="btn-left" onClick={handlePrev}>
-                    Câu trước
-                </button>
-                <button id="btn-flip" onClick={handleFlip}>
-                    Lật
-                </button>
-                <button id="btn-right" onClick={handleNext}>
-                    Câu tiếp
-                </button>
-            </div>
+  return (
+    <div className="box-card">
+        <div className="card">
+            <div className={`card-inner ${isFlipped ? "flipped" : ""}`}>
+                {!isFlipped ? (
+                    <div className="card-front">
+                      {/* Câu hỏi */}
+                      <div className="question">
+                        <p id="question-text">{currentQuestion.question}</p>
+                        {/* Danh sách đáp án */}
+                        <form id="quiz-form">
+                          {currentQuestion.options.map((option, index) => (
+                            <label key={index} className="quiz-option">
+                              <input type="radio" name="answer" value={option} />
+                              {option}
+                            </label> ))}
+                        </form>
+                      </div>
+                    </div>       
+                ) : (
+                    <div className="card-back">
+                        <p id="answer-text">Đáp án: {currentQuestion.answer}</p>
+                    </div>
+                )}
+            </div> 
         </div>
-    );
+      {/* Nút điều hướng */}
+      <div className="navigation">
+        <button id= "btn-left" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+          <svg className = "icon-btn-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fillRule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
+          </svg>
+        </button>
+        <button id="btn-flip" onClick={handleFlip}>Lật</button>
+        <button id= "btn-right"
+          onClick={handleNext}
+          disabled={currentQuestionIndex === questions.length - 1}
+        >
+          <svg className = "icon-btn-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
 };
 
-export default QuizApp;
+export default Quiz;

@@ -1,3 +1,21 @@
+function tai_lai_trang(){
+    location.reload();
+}
+
+const listBtn = document.querySelector('.js-btn_list')
+const modal = document.querySelector('.modal') //luu class modal vao bien modal
+const ClosetBtn = document.querySelector('.js-btn-close')
+function showList() {
+    modal.classList.add('open')
+}
+
+function hideList() {
+    modal.classList.remove('open')
+}
+
+listBtn.addEventListener('click', showList)
+ClosetBtn.addEventListener('click', hideList)
+
 let currentQuestionIndex = 0;
 
 const questions = [
@@ -123,8 +141,7 @@ function updateCard() {
         const label = document.createElement("label");
         const radio = document.createElement("input");
         radio.type = "radio";
-        radio.name = "answer";
-        
+        radio.name = "answer";     
         label.appendChild(radio);
         label.appendChild(document.createTextNode(option));
         answersForm.appendChild(label);
@@ -134,12 +151,13 @@ function updateCard() {
     document.getElementById("answer-text").textContent = `Đáp án: ${question.answer}`;
 }
 
+updateCard();
+
 document.getElementById("btn-flip").addEventListener("click", function() {
     document.querySelector(".card").classList.toggle("flipped");
 });
 
 //Hiển thị câu hỏi đầu tiên khi tải lại trang 
-updateCard();
 
 
 // chuyen sang cau hoi tiep theo
@@ -159,21 +177,3 @@ document.getElementById("btn-right").addEventListener("click", function() {
         document.querySelector(".card").classList.remove("flipped");
     }
 });
-
-function tai_lai_trang(){
-    location.reload();
-}
-
-const listBtn = document.querySelector('.js-btn_list')
-  const modal = document.querySelector('.modal') //luu class modal vao bien modal
-  const ClosetBtn = document.querySelector('.js-btn-close')
-  function showList() {
-    modal.classList.add('open')
-  }
-
-  function hideList() {
-    modal.classList.remove('open')
-  }
-
-  listBtn.addEventListener('click', showList)
-  ClosetBtn.addEventListener('click', hideList)
