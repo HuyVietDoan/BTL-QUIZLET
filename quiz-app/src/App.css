@@ -91,7 +91,7 @@ html{
   font-weight: 1200;
 }
 
-.nav-btn .logo-btn:hover{
+.size-6:hover {
   cursor: pointer;
 }
 
@@ -349,6 +349,7 @@ text-shadow: 0 0 20px #952;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-out;  
+  z-index: 1000;
 }
 
 .modal.open {

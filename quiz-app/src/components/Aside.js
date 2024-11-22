@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Aside() {
+
+    const reloadPage = () => {
+      window.location.reload();
+    };
+  
   return (
     <aside>
       <ul className="related">
@@ -26,6 +31,7 @@ function Aside() {
           </button>
         </li>
       </ul>
+
     </aside>
   );
 }
