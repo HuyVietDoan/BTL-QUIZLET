@@ -174,7 +174,88 @@ html{
     font-weight: 600;
 }   
 
+.modal {
+    /* display: none; */
+    position: fixed;
+    background-color: #0A092D;
+    left: 2.4rem;
+    top: 0;
+    bottom: 0;
+    padding-top: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out; 
+    z-index: 1000;
+}
 
+/* Modal */
+
+.modal.open {
+    /* display: flex; */
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    /* position: relative; */
+    padding-right: 2.4rem;
+}
+
+.modal-related {
+    margin-top: 2rem;
+}
+
+button {
+    border: none;
+}
+
+.modal-icon {
+    display: flex;
+    background-color: #0A092D;
+    height: 4rem;
+    width: 100%;
+    color: #fff;
+    padding: 0 1.6rem 0 0.8rem;
+    align-items: center;
+}
+
+.modal-icon:hover {
+    background-color: #2e3856;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+
+.modal-home-btn,
+.modal-folder-btn,
+.modal-bell-btn {
+    width: 3rem;
+    height: 2.5rem;
+}
+
+.modal-icon span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.modal-bell-item {
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+}
+
+.modal-folder-item,
+.modal-home-item {
+    margin-top: .8rem;
+}
+
+hr {
+    background-color: #282e3e;
+    border: none;
+    height: .2rem;
+    width: 20rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
 
 /* NỘI DUNG */
 
@@ -250,8 +331,12 @@ input#rate-5:checked ~ label{
     height: 3rem;
 }
 
-.text-card {
+.text-card,
+.text-aply,
+.text-exam,
+.text-study {
     margin-top: 0.5rem;
+    font-weight: 600;
 }
 
 .btn-card:hover,
@@ -310,87 +395,6 @@ aside {
     background-color: #0A092D;
 }
 
-/* Modal cua Aside */
-
-.modal {
-    /* display: none; */
-    position: fixed;
-    background-color: #0A092D;
-    left: 2.4rem;
-    top: 0;
-    bottom: 0;
-    padding-top: 1.5rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out;  
-}
-
-.modal.open {
-    /* display: flex; */
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-container {
-    /* position: relative; */
-    padding-right: 2.4rem;
-}
-
-.modal-related {
-    margin-top: 2rem;
-}
-
-button {
-    border: none;
-}
-
-.modal-icon {
-    display: flex;
-    background-color: #0A092D;
-    height: 4rem;
-    width: 100%;
-    color: #fff;
-    padding: 0 1.6rem 0 0.8rem;
-    align-items: center;
-}
-
-.modal-icon:hover {
-    background-color: #2e3856;
-    border-radius: .8rem;
-    cursor: pointer;
-}
-
-.modal-home-btn,
-.modal-folder-btn,
-.modal-bell-btn {
-    width: 3rem;
-    height: 2.5rem;
-}
-
-.modal-icon span {
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding-left: 1rem;
-}
-
-.modal-bell-item {
-    margin-top: .8rem;
-    margin-bottom: .8rem;
-}
-
-.modal-folder-item,
-.modal-home-item {
-    margin-top: .8rem;
-}
-
-hr {
-    background-color: #282e3e;
-    border: none;
-    height: .2rem;
-    width: 20rem;
-    margin-top: 1.6rem;
-    margin-bottom: 1.6rem;
-}
 
 /* Flashcard */
 
@@ -498,4 +502,186 @@ button:hover {
     display: flex;
     width: 4rem;
     height: 4rem;
+}
+
+
+/* Page 2 */
+
+#wrapper {
+    /* overflow-y: scroll; */
+}
+
+.header-container {
+    display: flex;
+    padding: 2.4rem 4.8rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-create {
+    padding: 0.6rem 1.4rem;
+    background-color: #0A092D;
+    border: solid 1.6px #586380;
+    border-radius: 0.6rem;
+    float: right;
+}
+
+.btn-create  > span {
+    color: #586380;
+    color: #d9dde8;
+}
+
+
+.btn-create:hover {
+    cursor: pointer;
+}
+
+#form {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 8px;
+}
+  
+.input-field,
+.textarea-field {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #2e3856;
+  border: none;
+  border-radius: 0.5rem;
+  color: #d9dde8;
+}
+
+::placeholder {
+    color: #d9dde8;
+    font-weight: 600;
+}
+
+.textarea-field {
+  resize: none;
+  height: 80px;
+}
+
+/* Tạo thẻ */
+  
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* Thẻ (Card) */
+.cards {
+  background-color: #2e3856;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Header của thẻ */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header span {
+    color:  #d9dde8;
+}
+
+.card-header span {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: #0A092D;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.trash-icon {
+    color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #282e3e;
+}
+
+/* Nội dung của thẻ */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* label {
+  font-size: 14px;
+  color:  #d9dde8;
+} */
+
+input[type="text"],
+input[type="file"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+input[type="text"] {
+    background-color: #2e3856;
+    color:  #d9dde8;
+}
+
+input[type="file"] {
+  background-color: #2c2c38;
+  color:  #d9dde8;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #3d3d4b;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #5a5a6b;
+}
+
+/* Nút Thêm Thẻ */
+.add-card-button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: auto; /* Đẩy nút xuống cuối */
+}
+
+.add-card-button:hover {
+  background-color: #45a049;
 }

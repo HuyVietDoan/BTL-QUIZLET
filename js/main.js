@@ -177,3 +177,61 @@ document.getElementById("btn-right").addEventListener("click", function() {
         document.querySelector(".card").classList.remove("flipped");
     }
 });
+
+//page 2
+
+// Thêm một thẻ mới
+function addCard() {
+    const cardContainer = document.getElementById('card-container');
+    
+    // Tạo thẻ mới
+    // const cards = cardContainer.getElementsByClassName('new-card');
+    const newCard = document.createElement('div');
+    newCard.className = 'new-card';
+  
+    const newCardIndex = cardContainer.getElementsByClassName('new-card').length + 1; // Xác định số thứ tự cho thẻ mới
+  
+    newCard.innerHTML = `
+      <div class="card-header">
+          <span>${newCardIndex}</span> <!-- Số thứ tự cho thẻ mới -->
+          <button class="delete-button" onclick="removeCard(this)">X</button>
+      </div>
+      <div class="card-body">
+          <div class="field">
+            <label for="term-${newCardIndex}">THUẬT NGỮ</label>
+            <input type="text" id="term-${newCardIndex}" placeholder="Nhập thuật ngữ">
+          </div>
+          <div class="field">
+            <label for="definition-${newCardIndex}">ĐỊNH NGHĨA</label>
+            <input type="text" id="definition-${newCardIndex}" placeholder="Nhập định nghĩa">
+          </div>
+      </div>
+    `;
+  
+    // Thêm thẻ mới vào container
+    const addCardButton = document.querySelector('.add-card-button'); // Nút "Thêm Thẻ"
+    cardContainer.insertBefore(newCard, addCardButton); // Đặt thẻ mới phía trên nút "Thêm Thẻ"
+  
+    // Cập nhật lại số thứ tự của tất cả các thẻ
+    updateCardNumbers();
+}
+  
+// Xóa một thẻ
+function removeCard(button) {
+  const card = button.closest('.new-card'); // Tìm thẻ cha gần nhất
+  card.remove(); // Xóa thẻ khỏi DOM
+
+  // Cập nhật lại số thứ tự của tất cả các thẻ
+  updateCardNumbers();
+}
+
+// Cập nhật số thứ tự cho tất cả các thẻ
+function updateCardNumbers() {
+  const cards = document.querySelectorAll('.new-card');
+  cards.forEach((card, index) => {
+    const span = card.querySelector('.card-header span');
+    if (span) {
+      span.textContent = index + 1; // Đặt lại số thứ tự
+    }
+  });
+}
