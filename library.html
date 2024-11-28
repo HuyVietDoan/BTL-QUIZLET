@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo thẻ</title>
+    <title>Thư viện</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div id="wrapper">
+    <div id="main">
         <div id="header">
             <div class="nav">
               <div class="nav-btn">
@@ -38,11 +38,11 @@
               </div>
               <div class="btn-right"> 
                 <div class="btn-right_choice">
-                  <button class="btn-right_plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                      <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-                    </svg>              
-                  </button>
+                    <button class="btn-right_plus" onclick="window.location.href='./page2.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                          <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                        </svg>
+                      </button>                      
                 </div>
                 <div class="btn-right_note">
                   <a role="button" href="https://quizlet.com/upgrade?source=header_plus&redir=https%3A%2F%2Fquizlet.com%2Flatest" >
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="modal">
                 <div class="modal-container js-modal-container">
                   <div class="modal-btn">
@@ -84,7 +84,7 @@
                     </li>
                     <li>
                       <div class="modal-folder-item">
-                        <button class="modal-icon" onclick="window.location.href='./library.html'">
+                        <button class="modal-icon">
                           <svg class="modal-folder-btn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 0 0-1.883 2.542l.857 6a2.25 2.25 0 0 0 2.227 1.932H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-1.883-2.542m-16.5 0V6A2.25 2.25 0 0 1 6 3.75h3.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 0 1.06.44H18A2.25 2.25 0 0 1 20.25 9v.776" />
                           </svg>                  
@@ -109,81 +109,10 @@
                 </div>
             </div>
         </div>
-
-        <div id="container">
-          <div class="header-container">
-              <h1>Tạo một học phần mới</h1>
-              <button class="btn-create">
-                  <span>Tạo</span>
-              </button>
-          </div>
-          <div id="form">
-              <input
-                  type="text-form"
-                  placeholder="Nhập tiêu đề, ví dụ 'Sinh học - Chương 22: Tiến hóa'"
-                  class="input-field"
-              />
-              <textarea
-                  placeholder="Thêm mô tả..."
-                  class="textarea-field"
-              ></textarea>
-          </div>
-
-          <div class="container" id="card-container">
-            <div class="new-card">
-                <div class="card-header">
-                    <span>1</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
-                    </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
-                    </div>
-                </div>
-            </div>
-
-            <div class="new-card">
-                <div class="card-header">
-                    <span>2</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
-                    </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
-                    </div>
-                </div>
-            </div>
-
-            <div class="new-card">
-                <div class="card-header">
-                    <span>3</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
-                    </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
-                    </div>
-                </div>
-            </div>
-            
-            <button class="add-card-button" onclick="addCard()">Thêm Thẻ</button>
-          </div>
+        <div id="content">
+            <h1 class="title-lib">Thư viện của bạn</h1>
         </div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo thẻ</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div id="wrapper">
+    <div id="main">
         <div id="header">
             <div class="nav">
               <div class="nav-btn">
@@ -38,11 +38,11 @@
               </div>
               <div class="btn-right"> 
                 <div class="btn-right_choice">
-                  <button class="btn-right_plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                      <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-                    </svg>              
-                  </button>
+                    <button class="btn-right_plus" onclick="window.location.href='./page2.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                          <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                        </svg>
+                      </button>                      
                 </div>
                 <div class="btn-right_note">
                   <a role="button" href="https://quizlet.com/upgrade?source=header_plus&redir=https%3A%2F%2Fquizlet.com%2Flatest" >
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="modal">
                 <div class="modal-container js-modal-container">
                   <div class="modal-btn">
@@ -109,81 +109,57 @@
                 </div>
             </div>
         </div>
-
-        <div id="container">
-          <div class="header-container">
-              <h1>Tạo một học phần mới</h1>
-              <button class="btn-create">
-                  <span>Tạo</span>
-              </button>
-          </div>
-          <div id="form">
-              <input
-                  type="text-form"
-                  placeholder="Nhập tiêu đề, ví dụ 'Sinh học - Chương 22: Tiến hóa'"
-                  class="input-field"
-              />
-              <textarea
-                  placeholder="Thêm mô tả..."
-                  class="textarea-field"
-              ></textarea>
-          </div>
-
-          <div class="container" id="card-container">
-            <div class="new-card">
-                <div class="card-header">
-                    <span>1</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
+        <div id="home-container">
+            <div class="op-cards">
+                <span>Bộ thẻ ghi nhớ</span>
+                <div class="box-flashcards">
+                    <div class="flashcard-folder">
+                        <span class="text-info">
+                            <a class="text-title" href="./index.html">Tư tưởng Hồ Chí Minh-Chương I</a>   
+                        </span>
                     </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
+    
+                    <div class="flashcard-folder">
+                        <span class="text-info">
+                            <a class="text-title" href="./index.html">Tư tưởng Hồ Chí Minh-Chương II</a>   
+                        </span>
+                    </div>
+
+                    <div class="flashcard-folder">
+                        <span class="text-info">
+                            <a class="text-title" href="./index.html">Tư tưởng Hồ Chí Minh-Chương III</a>   
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <div class="new-card">
-                <div class="card-header">
-                    <span>2</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
+            <div class="op-books">
+                <span class="text-op-books">Sách giáo khoa</span>
+                <div class="box-books">
+                    <div class="img-folder">
+                        <img src="./assets/img/2.jpg" alt="giaithichI" class="img-title">
+                         <a href="https://cuuduongthancong.com/pvf/2188626/giai-tich-ham-1-bien/pham-ngoc-anh/bai-giang-giai-tich-1-ngoc-anh.pdf">
+                            <p>Giải tích I</p>
+                         </a>
                     </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
+    
+                    <div class="img-folder">
+                        <img src="./assets/img/3.jpg" alt="triethoc" class="img-title">
+                        <a href="https://fr.scribd.com/document/80886825/Tai-Li%E1%BB%87u-Thi-Tri%E1%BA%BFt-h%E1%BB%8Dc-Ptit">
+                            <p>Triết học Mac-Lênin</p>
+                        </a>
                     </div>
-                </div>
-            </div>
 
-            <div class="new-card">
-                <div class="card-header">
-                    <span>3</span>
-                    <button class="delete-button" onclick="removeCard(this)">X</button>
-                </div>
-                <div class="card-body">
-                    <div class="field">
-                      <label for="term-1">THUẬT NGỮ</label>
-                      <input type="text" id="term-1" placeholder="Nhập thuật ngữ">
-                    </div>
-                    <div class="field">
-                      <label for="definition-1">ĐỊNH NGHĨA</label>
-                      <input type="text" id="definition-1" placeholder="Nhập định nghĩa">
+                    <div class="img-folder">
+                        <img src="./assets/img/4.jpg" alt="tutuongHCM" class="img-title">
+                        <a href="https://fr.scribd.com/document/658881799/123doc-Ptit-de-Cuong-Dap-an-Chuan-Tu-Tuong-Hcm-Hoc-Vien-Cong-Nghe-Buu-Chinh-Vien-Thong">
+                            <p>Tư tưởng Hồ Chí Minh</p>
+                        </a>
                     </div>
                 </div>
             </div>
-            
-            <button class="add-card-button" onclick="addCard()">Thêm Thẻ</button>
-          </div>
         </div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>

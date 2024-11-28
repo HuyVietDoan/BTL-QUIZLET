@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import Container from './components/Container';
-import Aside from './components/Aside';
-import QuizApp from "./components/QuizApp";
+import Header from './components/Flashcards/Header';
+import Container from './components/Flashcards/Container';
+import Aside from './components/Flashcards/Aside';
+import QuizApp from "./components/Flashcards/QuizApp";
 
 function App() {
   return (
